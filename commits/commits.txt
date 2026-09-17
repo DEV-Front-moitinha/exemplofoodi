@@ -2,4 +2,6 @@
 Estrutura e configuração Tailwindcss
 
 - Segundo commit -
+git commit -m "feat: Codificando e entendendo a função MAP"
 
+git commit -m "feat: Codificando e entendendo a função REDUCE"
