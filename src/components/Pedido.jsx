@@ -80,7 +80,7 @@ const Pedido = () => {
                 <ul>
                     {carrinho.map(item =>(
                         <li key={item.id}>
-                            {item.quantidade} X {item.nome} -R$ {total.toFixed(2)}
+                            {item.quantidade} X {item.nome} -R$ {item.preco * item.quantidade.toFixed(2)}
                         </li>
                     ))}
                 </ul>
