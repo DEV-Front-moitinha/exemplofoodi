@@ -64,6 +64,9 @@ const Pedido = () => {
       {produtosDisponiveis.map(produto=>(
         <div key={produto.id}>
             <span>{produto.nome}(R${produto.preco.toFixed(2)})</span>
+            <button onClick={AlterarQuandidade(produto.id, -1)}>-</button>
+            <span>{produto.quantidade}</span>
+            <button onClick={AlterarQuandidade}></button>
         </div>
       ))}
     </div>
