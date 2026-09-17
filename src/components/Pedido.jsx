@@ -44,9 +44,28 @@ const Pedido = () => {
     const subTotal = carrinho.reduce((ac,item)=>ac.item.preco * item.quantidade,0)
     const total = subTotal > 0 ? subTotal + taxaEntrega: 0;
 
+    //SIMULAÇÃO DO CICLO DE VIDA DA ENTREGA USANDO TEMPORIZADORES ASSINCRONOS
+    const confirmarPedido=()=>{
+        setEnviar(true);
+        setStatus("Restaurante Preparando seu Pedido")
+        setTimeout(()=>{
+            setStatus("Seu Pedido saiu para a Entrega")
+            setEnviar(false);
+        },5000)
+        setTimeout(()=>{
+            setStatus("Seu Pedido foi entregue com sucesso")
+            setEnviar(false)
+        },10000)
+    }
+
     return (
     <div>
-      
+      <h1>Cardápio do Restaurante</h1>
+      {produtosDisponiveis.map(produto=>(
+        <div key={produto.id}>
+            <span>{produto.nome}(R${produto.preco.toFixed(2)})</span>
+        </div>
+      ))}
     </div>
   )
 }
